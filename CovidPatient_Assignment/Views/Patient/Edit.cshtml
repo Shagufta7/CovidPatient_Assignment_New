@@ -1,0 +1,86 @@
+﻿@model Patient
+<div class="container shadow p-5">
+    <div class="row pb-2">
+        <h2>Edit Patient</h2>
+    </div>
+
+     <form method="post" asp-action="Edit">
+        <div asp-validation-summary="All"></div>
+         <div class="form-row">
+            <div class="form-group col-md-6">
+                <label asp-for="Name">Patient Name</label>
+                <input type="text" class="form-control mb-3" asp-for="Name">
+                <span asp-validation-for="Name" class=" alert-danger"></span>
+            </div>
+            <div class="form-group col-md-6">
+                <label asp-for="PassportNumber">PassportNumber</label>
+                <input type="text" class="form-control mb-3" asp-for="PassportNumber">
+                <span asp-validation-for="PassportNumber" class=" alert-danger"></span>
+            </div>
+        </div>
+
+           <div class="form-row">
+            <div class="form-group col-md-6">
+                <label asp-for="Emirates_ID">Emirates_ID</label>
+                <input type="text" class="form-control mb-3" asp-for="Emirates_ID">
+                <span asp-validation-for="Emirates_ID" class=" alert-danger"></span>
+            </div>
+            <div class="form-group col-md-6 mb-3">
+                <label asp-for="Emirate">Emirate</label>
+                <input type="text" class="form-control" asp-for="Emirate">
+                <span asp-validation-for="Emirate" class=" alert-danger"></span>
+            </div>
+        </div>
+
+           <div class="form-row">
+            <div class="form-group col-md-6">
+                <label asp-for="Address">Address</label>
+                <input type="text" class="form-control mb-3" asp-for="Address">
+                <span asp-validation-for="Address" class=" alert-danger"></span>
+            </div>
+            <div class="form-group col-md-6 mb-3">
+                <label asp-for="FirstDose">FirstDose</label>
+                <input type="text" class="form-control" asp-for="FirstDose">
+                <span asp-validation-for="FirstDose" class=" alert-danger"></span>
+            </div>
+        </div>
+
+          <div class="form-row">
+            <div class="form-group col-md-6">
+                <label asp-for="SecondDose">SecondDose</label>
+                <input type="text" class="form-control mb-3" asp-for="SecondDose">
+                <span asp-validation-for="SecondDose" class=" alert-danger"></span>
+            </div>
+            <div class="form-group col-md-6 mb-3">
+                <label asp-for="ThirdDose">ThirdDose</label>
+                <input type="text" class="form-control" asp-for="ThirdDose">
+                <span asp-validation-for="ThirdDose" class=" alert-danger"></span>
+            </div>
+        </div>
+
+           <div class="form-row">
+            <div class="form-group col-md-6">
+                <label asp-for="ForthDose">ForthDose</label>
+                <input type="text" class="form-control mb-3" asp-for="ForthDose">
+                <span asp-validation-for="ForthDose" class=" alert-danger"></span>
+            </div>
+             <div class="form-group col-md-6 mb-3">
+                <label asp-for="RecordCreatedOn">Created On</label>
+                <input type="datetime-local" class="form-control" asp-for="RecordCreatedOn">
+                <span asp-validation-for="RecordCreatedOn" class=" alert-danger"></span>
+            </div>
+        </div>
+           <button type="submit" class="btn btn-lg btn-primary p-2"><i class="bi bi-file-plus-fill"></i>Update</button>
+        <a asp-controller="Patient" asp-action="Index" class="btn btn-lg btn-warning p-2">Back To List</a>
+    </form>
+
+</div>
+
+
+@*//for front end validations*@
+
+@section Scripts{
+    @{
+    <partial name="_ValidationScriptsPartial" />
+    }
+}

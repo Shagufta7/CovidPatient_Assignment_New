@@ -1,0 +1,160 @@
+﻿@model Patient
+
+
+
+@using (Html.BeginForm(actionName:"Create", controllerName:"Patient",FormMethod.Post))
+{
+    @Html.ValidationSummary(true)
+      
+    <div class="form-group col-md-6">
+     Name:
+     @Html.TextAreaFor(expression:model => model.Name,htmlAttributes:new{@class="form-control mb-3"})
+     @Html.ValidationMessageFor(expression:model => model.Name,null, htmlAttributes:new {@class=" text-danger"})
+     
+     
+     </div>
+      <div class="form-group col-md-6">
+     PassportNumber:
+     @Html.TextAreaFor(expression:model => model.PassportNumber,htmlAttributes:new{@class = "form-control"})
+       @Html.ValidationMessageFor(expression:model => model.PassportNumber,null, htmlAttributes:new {@class=" text-danger"})
+     
+     </div>
+
+        <div class="form-group col-md-6">
+     Emirates_ID:
+     @Html.TextAreaFor(expression:model => model.Emirates_ID,htmlAttributes:new{@class = "form-control"})
+      @Html.ValidationMessageFor(expression:model => model.Emirates_ID,null, htmlAttributes:new {@class=" text-danger"})
+     
+     </div>
+
+        <div class="form-group col-md-6">
+     Emirate:
+     @Html.TextAreaFor(expression:model => model.Emirate,htmlAttributes:new{@class = "form-control"})
+      @Html.ValidationMessageFor(expression:model => model.Emirate,null, htmlAttributes:new {@class=" text-danger"})
+     
+     </div>
+
+       <div class="form-group col-md-6">
+     Address:
+     @Html.TextAreaFor(expression:model => model.Address,htmlAttributes:new{@class = "form-control"})
+      @Html.ValidationMessageFor(expression:model => model.Address,null, htmlAttributes:new {@class=" text-danger"})
+     
+     </div>
+
+     <div class="form-group col-md-6">
+     FirstDose:
+     @Html.TextAreaFor(expression:model => model.FirstDose,htmlAttributes:new{@class = "form-control"})
+      @Html.ValidationMessageFor(expression:model => model.FirstDose,null, htmlAttributes:new {@class=" text-danger"})
+     
+     </div>
+
+      <div class="form-group col-md-6">
+     SecondDose:
+     @Html.TextAreaFor(expression:model => model.SecondDose,htmlAttributes:new{@class = "form-control"})
+      @Html.ValidationMessageFor(expression:model => model.SecondDose,null, htmlAttributes:new {@class=" text-danger"})
+     
+     </div>
+
+       <div class="form-group col-md-6">
+     ThirdDose:
+     @Html.TextAreaFor(expression:model => model.ThirdDose,htmlAttributes:new{@class = "form-control"})
+      @Html.ValidationMessageFor(expression:model => model.ThirdDose,null, htmlAttributes:new {@class=" text-danger"})
+     
+     </div>
+
+       <div class="form-group col-md-6">
+     ForthDose:
+     @Html.TextAreaFor(expression:model => model.ForthDose,htmlAttributes:new{@class = "form-control"})
+      @Html.ValidationMessageFor(expression:model => model.ForthDose,null, htmlAttributes:new {@class=" text-danger"})
+     
+     </div>
+
+      <div class="form-group col-md-6">
+     RecordCreatedOn:
+     @Html.TextAreaFor(expression:model => model.RecordCreatedOn,htmlAttributes:new{@class = "form-control"})
+      @Html.ValidationMessageFor(expression:model => model.RecordCreatedOn,null, htmlAttributes:new {@class=" text-danger"})
+     
+     </div>
+
+     <button type="submit" class="btn btn-lg btn-primary p-2"><i class="bi bi-file-plus-fill"></i>Submit</button>
+    <a asp-controller="Patient" asp-action="Index" class="btn btn-lg btn-warning p-2">Back To List</a>
+
+
+}
+
+@*<div class="container shadow p-5">
+    <div class="row pb-2">
+        <h2>Add Patient</h2>
+    </div>
+    <form method="post">
+        <div asp-validation-summary="All"></div>
+
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label asp-for="Name">Patient Name</label>
+                <input type="text" class="form-control mb-3" asp-for="Name" placeholder="Enter Name">
+                <span asp-validation-for="Name" class=" alert-danger"></span>
+            </div>
+              <div class="form-group col-md-6">
+                <label asp-for="PassportNumber">Passport Number</label>
+                <input type="text" class="form-control mb-3" asp-for="PassportNumber" placeholder="Enter PassportNumber">
+                <span asp-validation-for="PassportNumber" class=" alert-danger"></span>
+            </div>
+        </div>
+         <div class="form-row">
+            <div class="form-group col-md-6">
+                <label asp-for="Emirates_ID">Emirates ID</label>
+                <input type="text" class="form-control mb-3" asp-for="Emirates_ID" placeholder="Enter Emirates ID">
+                <span asp-validation-for="Emirates_ID" class=" alert-danger"></span>
+            </div>
+             <div class="form-group col-md-6 mb-3">
+                <label asp-for="Emirate">Emirate</label>
+                <input type="text" class="form-control" asp-for="Emirate" placeholder="Enter Emirate">
+                <span asp-validation-for="Emirate" class=" alert-danger"></span>
+            </div>
+        </div>
+
+         <div class="form-row">
+             <div class="form-group col-md-6">
+                <label asp-for="Address">Address</label>
+                <input type="text" class="form-control mb-3" asp-for="Address" placeholder="Enter Address">
+                <span asp-validation-for="Address" class=" alert-danger"></span>
+            </div>
+             <div class="form-group col-md-6 mb-3">
+                <label asp-for="FirstDose">FirstDose</label>
+                <input type="text" class="form-control" asp-for="FirstDose" placeholder="Enter FirstDose">
+                <span asp-validation-for="FirstDose" class=" alert-danger"></span>
+            </div>
+        </div>
+
+        <div class="form-row">
+             <div class="form-group col-md-6">
+                <label asp-for="SecondDose">SecondDose</label>
+                <input type="text" class="form-control mb-3" asp-for="SecondDose" placeholder="Enter SecondDose">
+                <span asp-validation-for="SecondDose" class=" alert-danger"></span>
+            </div>
+             <div class="form-group col-md-6 mb-3">
+                <label asp-for="ThirdDose">ThirdDose</label>
+                <input type="text" class="form-control" asp-for="ThirdDose" placeholder="Enter ThirdDose">
+                <span asp-validation-for="ThirdDose" class=" alert-danger"></span>
+            </div>
+        </div>
+
+          <div class="form-row">
+             <div class="form-group col-md-6">
+                <label asp-for="ForthDose">ForthDose</label>
+                <input type="text" class="form-control mb-3" asp-for="ForthDose" placeholder="Enter ForthDose">
+                <span asp-validation-for="ForthDose" class=" alert-danger"></span>
+            </div>
+             <div class="form-group col-md-6 mb-3">
+                <label asp-for="RecordCreatedOn">Created On</label>
+                <input type="datetime-local" class="form-control" asp-for="RecordCreatedOn">
+                <span asp-validation-for="RecordCreatedOn" class=" alert-danger"></span>
+            </div>
+        </div>
+
+         <button type="submit" class="btn btn-lg btn-primary p-2"><i class="bi bi-file-plus-fill"></i>Submit</button>
+        <a asp-controller="Patient" asp-action="Index" class="btn btn-lg btn-warning p-2">Back To List</a>
+    </form>
+
+    @*//for front end validations*@
